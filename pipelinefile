@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent {label 'dev'}
     stages{
         stage('continous download'){
             steps{git 'https://github.com/Durga741/dev.git'}
@@ -12,7 +12,7 @@ pipeline{
         }
          stage('continous testing'){
             steps{git 'https://github.com/Durga741/testing.git'
-            sh 'java -jar /var/lib/jenkins/workspace/development/testing.jar'    
+            sh 'java -jar  /home/ubuntu/jenkins/workspace/development/testing.jar'    
             }
         }
          stage('continous delivery'){
